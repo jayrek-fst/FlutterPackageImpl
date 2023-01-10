@@ -33,7 +33,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
           return Stack(children: [
             Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Column(children: [
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
                   TextFormField(
                       controller: emailController,
                       decoration:
