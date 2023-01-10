@@ -23,7 +23,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           debugPrint('state: ${state.state}');
           if (state.state == standalone_bloc.State.registered) {
             ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                content: Text('Signed up successfully'),
+                content: Text('Signed up successfully!'),
                 backgroundColor: Colors.green));
           }
           if (state.state == standalone_bloc.State.failed) {
