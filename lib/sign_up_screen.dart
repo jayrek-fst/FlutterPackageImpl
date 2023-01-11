@@ -21,12 +21,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
         body: BlocConsumer<standalone_bloc.RegisterBloc,
             standalone_bloc.RegisterState>(listener: (context, state) {
           debugPrint('state: ${state.state}');
-          if (state.state == standalone_bloc.State.registered) {
+          if (state.state == standalone_bloc.RegisterStateEnum.registered) {
             ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                 content: Text('Signed up successfully!'),
                 backgroundColor: Colors.green));
           }
-          if (state.state == standalone_bloc.State.failed) {
+          if (state.state == standalone_bloc.RegisterStateEnum.failed) {
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                 content: Text(state.state.name), backgroundColor: Colors.red));
           }
@@ -62,7 +62,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               },
                               child: const Text('Sign up')))
                     ])),
-            if (state.state == standalone_bloc.State.loading)
+            if (state.state == standalone_bloc.RegisterStateEnum.loading)
               const Center(child: CircularProgressIndicator(color: Colors.red))
           ]);
         }));
